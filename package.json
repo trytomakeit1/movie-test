@@ -1,0 +1,22 @@
+{
+  "name": "movie-test",
+  "version": "1.0.0",
+  "description": "Movie app with React.js and apollo client",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trytomakeit1/movie-test.git"
+  },
+  "keywords": [
+    "React.js"
+  ],
+  "author": "Anahita",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trytomakeit1/movie-test/issues"
+  },
+  "homepage": "https://github.com/trytomakeit1/movie-test#readme"
+}
