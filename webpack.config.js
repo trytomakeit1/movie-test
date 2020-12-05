@@ -8,7 +8,8 @@ module.exports = {
     entry: './src/index.js',
     output: {
         path: path.resolve(__dirname, "public"),
-        filename: 'bundle.js'
+        filename: 'bundle.js',
+        publicPath: '/'
 
     },
 
@@ -47,6 +48,7 @@ module.exports = {
     devServer: {
         port: 4000,
         contentBase: './public',
-        inline: true /* automatically updates live code */
+        inline: true /* automatically updates live code */,
+        historyApiFallback: true
     }
 }

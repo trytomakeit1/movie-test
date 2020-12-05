@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import '../style.css';
 
 import Loginform from './Loginform';
+import Movies from './Movies';
+import {Redirect, Route} from 'react-router-dom';
 
 
 
@@ -12,10 +14,29 @@ class App extends Component {
 
         return (
         <div className="container">
-            <p>Please login to your account and if you are not registered, use 
-              singup to register.</p>
+
+           
+            <Route exact path="/movies" render={()=>{
+                console.log('qua')
+                let content = null;
+                localStorage.getItem('token') ?
+                content = <Movies />
+                :
+                content = <Redirect to="/" />
+                return content;
+            }}></Route> 
             
-            <Loginform/>
+            
+            <Route exact path="/" render={()=>{
+                let content = null;
+                !localStorage.getItem('token') ?
+                content = <Loginform/>
+                : 
+                content = <Redirect to="movies" />
+                return content;
+            }
+            }></Route>
+            
 
         </div>)
     }
