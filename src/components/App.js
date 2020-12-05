@@ -8,10 +8,6 @@ import Loginform from './Loginform';
 class App extends Component {
 
 
-    loginHandler(e){
-        e.preventDefault();
-        console.log("Login form submitted");
-   }
     render(){
 
         return (
@@ -19,7 +15,7 @@ class App extends Component {
             <p>Please login to your account and if you are not registered, use 
               singup to register.</p>
             
-            <Loginform onsubmit={this.loginHandler}/>
+            <Loginform/>
 
         </div>)
     }
