@@ -1,0 +1,40 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.loginform {
+    margin: 0 auto;
+    border: 1px solid #ccc;
+    padding: 10px;
+    width: 300px;
+}
+.loginform div {
+    display: flex;
+    justify-content: center;
+    padding: 5px;
+}
+.loginform div *{
+    margin: 2px;
+}
+
+
+.button {
+    padding: 10px;
+    background-color: #2fd7f3;
+    font-weight: 600;
+    border: 0;
+    box-shadow: 3px 2px 3px lightblue;
+}
+  
+.button:focus, .button:hover, .button:active {
+    outline: none;
+    box-shadow: 1px 1px lightblue;
+}
+
+
+/* media queries *** */
+
+
