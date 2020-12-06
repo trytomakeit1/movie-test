@@ -4,6 +4,7 @@ import '../style.css';
 import Loginform from './Loginform';
 import Movies from './Movies';
 import {Redirect, Route} from 'react-router-dom';
+import MovieManipulator from './MovieManipulator';
 
 
 
@@ -17,14 +18,24 @@ class App extends Component {
 
            
             <Route exact path="/movies" render={()=>{
-                console.log('qua')
                 let content = null;
                 localStorage.getItem('token') ?
                 content = <Movies />
                 :
                 content = <Redirect to="/" />
                 return content;
-            }}></Route> 
+            }}></Route>
+
+            <Route exact path="/movie-edit" render={()=>{
+                let content = null;
+                localStorage.getItem('token') ?
+                content = <MovieManipulator />
+                :
+                content = <Redirect to="/" />
+                return content;
+            }}></Route>
+
+
             
             
             <Route exact path="/" render={()=>{

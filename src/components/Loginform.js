@@ -79,20 +79,20 @@ const Loginform = (props) => {
    <Fragment>
        <p>Please login to your account and if you are not registered, use <span style={{textDecoration: "underline", cursor: "pointer"}} onClick={()=>loginUpdate({redirect: "signup"})}>signup</span> to register.</p>
         <div className="loginform">
-   <form onSubmit={loginHandler}>
-       <div>
-           <label>Username:</label>
-           <input type="text" name="username"></input>
-       </div>
-       <div>
-           <label>Password:</label>
-           <input type="password" name="password"></input>
-       </div>
-       <div>
-           <button className="button">Login</button>
-       </div>
-   </form>
-   </div>
+            <form onSubmit={loginHandler}>
+            <div>
+                <label>Username:</label>
+                <input type="text" name="username"></input>
+            </div>
+            <div>
+                <label>Password:</label>
+                <input type="password" name="password"></input>
+            </div>
+            <div>
+                <button className="button">Login</button>
+            </div>
+            </form>
+        </div>
    </Fragment>);
 
    let signupform = (

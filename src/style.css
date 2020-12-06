@@ -34,6 +34,38 @@
     box-shadow: 1px 1px lightblue;
 }
 
+.moviesList {
+    display: flex;
+    justify-content: left;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.movieTile {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin: 10px;
+    width: 25%;
+}
+
+.movieTile p {
+    text-align: left;
+}
+
+.movieForm {
+    padding: 10px
+}
+.movieForm div {
+    display: flex;
+    justify-content: left;
+    padding: 5px;
+    text-align: left;
+}
+
+.movieForm div *{
+    margin: 2px;
+}
+
 
 /* media queries *** */
 
