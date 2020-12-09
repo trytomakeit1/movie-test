@@ -6,8 +6,8 @@ import Movies from './Movies';
 import {Redirect, Route} from 'react-router-dom';
 import MovieManipulator from './MovieManipulator';
 import MovieEdit from './MovieEdit';
-
-
+import MovieTile from './MovieTile';
+import TableView from './TableView';
 
 class App extends Component {
 
@@ -38,9 +38,18 @@ class App extends Component {
 
             <Route exact path="/movie-edit" render={(props)=>{
                 let content = null;
-                console.log(props.location);
                 localStorage.getItem('token') ?
                 content = <MovieEdit  {...props} />
+                :
+                content = <Redirect to="/" />
+                return content;
+            }}></Route>
+
+
+            <Route exact path="/movie-details" render={(props)=>{
+                let content = null;
+                localStorage.getItem('token') ?
+                content = <MovieTile  {...props} />
                 :
                 content = <Redirect to="/" />
                 return content;
@@ -60,6 +69,8 @@ class App extends Component {
             }></Route>
             
 
+{/*             <TableView></TableView>
+ */}
         </div>)
     }
 

@@ -77,7 +77,6 @@ const MovieEdit = (props) => {
                 let releaseDate = e.target.elements.releaseDate.value;
                 let duration = parseInt(e.target.elements.duration.value);
                 let actors = actorsState.actorsList;
-                console.log(name, releaseDate, duration, actors);
 
                 updateMovie({variables: {id:movie.id, name, releaseDate, duration, actors}});
                 //redirect to movies    

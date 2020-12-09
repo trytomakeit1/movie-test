@@ -5,6 +5,12 @@
 
 }
 
+
+.radioholder {
+    display: inline-block !important;
+    margin: 10px;
+}
+
 .loginform {
     margin: 0 auto;
     border: 1px solid #ccc;
@@ -41,15 +47,29 @@
     justify-content: space-between;
 }
 
-.movieTile {
+.movieTile, .feedback {
     border: 1px solid #ccc;
     padding: 15px;
     margin: 10px;
-    width: 25%;
 }
 
 .movieTile p {
     text-align: left;
+}
+
+.feedback input[type="radio"] {
+    margin-right: 3px;
+}
+
+.feedback textarea{
+    margin-left: 10px;
+    vertical-align: top;
+    min-width: 250px;
+    min-height: 100px;
+}
+
+.feedback div {
+    margin-bottom: 10px !important;
 }
 
 .movieForm {
@@ -66,6 +86,18 @@
     margin: 2px;
 }
 
+.moviesTable {
+    margin: 0 auto;
+}
+
+.moviesTable, .moviesTable td, .moviesTable th{
+    border: 1px solid black;
+    border-spacing: 0;
+
+}
+.moviesTable td, .moviesTable th {
+    padding: 7px;
+}
 
 /* media queries *** */
 
