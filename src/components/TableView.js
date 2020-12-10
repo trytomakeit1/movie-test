@@ -13,6 +13,33 @@ const TableView = (props) => {
     history.push("movie-details", {movie: movie});
 
   }
+
+  let sortByColumn = "name";
+  let sortDesc = false;
+
+  let currentCookies = document.cookie;
+  let cookies = currentCookies.split(";");
+
+  for(let i = 0 ; i< cookies.length; i++) {
+    let trimmedCookie =cookies[i];
+
+    if(cookies[i].charAt(0) === " "){
+      //clean the initial space
+      trimmedCookie = cookies[i].substring(1);
+    }
+    if(trimmedCookie.indexOf("sortedBy") >= 0) {
+      //we have sorted by column
+      sortByColumn = trimmedCookie.slice(trimmedCookie.indexOf("=")+ 1);
+    }
+    if(trimmedCookie.indexOf("isSortedDesc") >= 0) {
+      let sortDescStr = trimmedCookie.slice(trimmedCookie.indexOf("=")+ 1);
+      if(sortDescStr === "true") sortDesc = true;
+      else if(sortDescStr === "false") sortDesc = false;
+    }
+
+  }
+
+
   const columns = React.useMemo(
     () => [
         {
@@ -59,8 +86,8 @@ const TableView = (props) => {
       initialState: {
         sortBy: [
             {
-                id: 'name',
-                desc: false
+                id: sortByColumn,
+                desc: sortDesc
             }
         ]
     }
@@ -72,9 +99,15 @@ const TableView = (props) => {
         <thead>
           {headerGroups.map((headerGroup, index1) => (
             <tr key={index1} {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column, index2) => (
+              {headerGroup.headers.map((column, index2) => {
+                if(column.isSorted) {
+                  document.cookie = "sortedBy=" + column.id;
+                  document.cookie = "isSortedDesc=" + column.isSortedDesc;
+                }
+                return(
                 <th key={index2} {...column.getHeaderProps(column.getSortByToggleProps())}>{column.render("Header")}</th>
-              ))}
+              )}
+              )}
             </tr>
           ))}
         </thead>
