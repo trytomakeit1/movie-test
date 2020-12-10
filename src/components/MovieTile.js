@@ -46,7 +46,6 @@ const MovieTile = (props) => {
     `;
 
     const {loading, error, data, refetch } = useQuery(CURRENT_USER);
-    //{fetchPolicy: 'network-only'},
 
 
     let actorsList = movie.actors.map((actor, index) => {
@@ -108,9 +107,11 @@ const MovieTile = (props) => {
             <p>Actors: {actorsList}</p>
             <p>Average user rating: {movie.averageRating === 0 ? "No ratings" : movie.averageRating}</p>
             <button className="button" style={{margin: "10px"}} onClick={listShowChange}>Edit</button>
-            {/* TODO fix refetching */}
+
             <button className="button" style={{background: "#ff4747", margin: "10px"}} 
-                onClick={(e)=>{e.preventDefault();deleteMovie({variables: {id: movie.id}}); /* props.refetching() */ }}>Delete</button>
+                onClick={(e)=>{e.preventDefault();
+                    deleteMovie({variables: {id: movie.id}});
+                    props.history.replace("movies"); }}>Delete</button>
         </div>
         
         

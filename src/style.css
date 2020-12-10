@@ -1,10 +1,44 @@
+
+body{
+    margin-top: 0;
+}
+
 .container {
     max-width: 1000px;
     margin: 0 auto;
     text-align: center;
-
 }
 
+.header{
+    background: #0d1c84;
+    color: white;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.header div {
+    display: inline-block;
+    width: 50%;
+}
+
+.header div:first-child {
+    text-align: left;
+}
+.header div:last-child {
+    text-align: right;
+}
+
+.header div:last-child a {
+    color: white;
+    text-decoration: none;
+}
+.header div:last-child a:hover, .header div:last-child a.active {
+    text-decoration: underline;
+}
+
+.main-content {
+    padding: 20px;
+}
 
 .radioholder {
     display: inline-block !important;
@@ -18,11 +52,13 @@
     width: 400px;
     box-sizing: border-box;
 }
+
 .loginform div {
     display: flex;
     justify-content: center;
     padding: 5px;
 }
+
 .loginform div *{
     margin: 2px;
 }
