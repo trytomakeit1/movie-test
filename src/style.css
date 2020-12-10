@@ -15,7 +15,8 @@
     margin: 0 auto;
     border: 1px solid #ccc;
     padding: 10px;
-    width: 300px;
+    width: 400px;
+    box-sizing: border-box;
 }
 .loginform div {
     display: flex;
@@ -100,5 +101,44 @@
 }
 
 /* media queries *** */
+
+
+@media screen and (max-width: 576px) {
+    .container {
+        max-width: 100vw;
+    }
+    .loginform {
+        padding: 7px !important;
+        width: 100%;
+    }
+    .loginform input{
+        flex-grow: 1;
+    }
+    .button{
+        padding: 6px;
+    }
+
+    .moviesList {
+        width: 100%;
+        overflow: scroll;
+    }
+
+    .moviesTable td, .moviesTable th {
+        padding: 3px;
+    }
+    
+}
+
+
+
+@media screen and (min-width: 577px) and (max-width: 992px) {
+    .container{
+        max-width: 100vw;
+    }
+    
+}
+
+
+
 
 
