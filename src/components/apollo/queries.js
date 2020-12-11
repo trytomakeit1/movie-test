@@ -6,7 +6,7 @@ const queries = () => {
     const MOVIES_LIST = gql`
     query moviesListQuery {
         moviesList {
-            id name releaseDate duration actors averageRating usersRated
+            id name releaseDate duration actors averageRating usersRated feedback {userId rate comment}
         }
     }
     `;

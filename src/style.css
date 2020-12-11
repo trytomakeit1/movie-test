@@ -77,11 +77,8 @@ body{
     box-shadow: 1px 1px lightblue;
 }
 
-.moviesList {
-    display: flex;
-    justify-content: left;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.button:hover{
+    cursor: pointer;
 }
 
 .movieTile, .feedback {
